@@ -31,3 +31,13 @@ var convertDegToRad = function (degree) {
 };
 
 console.log(convertCelToFah(degreeVal));
+
+//Given the base and perpendicular lengths of a right angle triangle, calculate the hypotenuse length
+var getHypotenuse = function (base, height) {
+    var hypotemuse = Math.sqrt(base * base + height + height);
+    return hypotemuse.toFixed(3);
+};
+
+console.log("Hypotenuse is: " + getHypotenuse(3, 4));
+
+
