@@ -28,3 +28,20 @@ var testString  = function (string) {
 
 testString(testStringNum);
 testString(test);
+
+//Use a regex to determine Postcode validity
+var valid_postcode = function (postcode) {
+    postcode = postcode.replace(/\s/g, "");
+    var regex = /^[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}$/i;
+    if (regex.test(postcode)) {
+        console.log(postcode + " is a valid postcode");
+    } else {
+        console.log(postcode + " isnt a vaild postcode");
+    };
+};
+
+//Tests
+valid_postcode("TS225QH");
+valid_postcode("500");
+valid_postcode("test");
+valid_postcode("Ts22 5qh");
