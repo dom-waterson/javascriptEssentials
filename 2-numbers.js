@@ -12,3 +12,12 @@ var checkNum = function (num) {
 
 checkNum(evenNum);
 checkNum(oddNum);
+
+//Task 2 - Convert Celsius into Farenheit
+var temp = 20;
+
+var convertCelToFah = function (temp) {
+    return temp * 9 / 5 + 32;
+};
+
+console.log(convertCelToFah(temp));
