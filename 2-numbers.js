@@ -21,3 +21,13 @@ var convertCelToFah = function (temp) {
 };
 
 console.log(convertCelToFah(temp));
+
+//Task 3 - Convert degrees into radians
+var degreeVal = 90;
+
+var convertDegToRad = function (degree) {
+    var radians = degree * Math.PI / 180
+    return radians;
+};
+
+console.log(convertCelToFah(degreeVal));
