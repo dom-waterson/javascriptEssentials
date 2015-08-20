@@ -5,7 +5,8 @@ var evenNum = 10;
 var checkNum = function (num) {
     if (num % 2 === 0) {
         console.log(num + " is even");
-    } else {
+    }
+    else {
         console.log(num + " is odd");
     };
 };
@@ -30,9 +31,9 @@ var convertDegToRad = function (degree) {
     return radians;
 };
 
-console.log(convertCelToFah(degreeVal));
+console.log(convertDegToRad(degreeVal));
 
-//Given the base and perpendicular lengths of a right angle triangle, calculate the hypotenuse length
+//Task 4 - Given the base and perpendicular lengths of a right angle triangle, calculate the hypotenuse length
 var getHypotenuse = function (base, height) {
     var hypotemuse = Math.sqrt(base * base + height + height);
     return hypotemuse.toFixed(3);
@@ -40,4 +41,9 @@ var getHypotenuse = function (base, height) {
 
 console.log("Hypotenuse is: " + getHypotenuse(3, 4));
 
+//Task 5 - Determine the length of a hypotenuse, for a given “opposite” length and angle
+var getHypot = function (oppLength, angle) {
+    return oppLength / Math.sin(angle);
+};
 
+console.log(getHypot(10, 60));
