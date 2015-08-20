@@ -47,3 +47,16 @@ var getHypot = function (oppLength, angle) {
 };
 
 console.log(getHypot(10, 60));
+
+
+//Task 6 - A Program to roll a six-sided die
+var rollSixDie = function () {
+    //var min = 1;
+    //var max = 6;
+    //return Math.floor(Math.random() * (min - max + 1)) + min;
+    return 1 + Math.floor(Math.random() * 6)
+};
+
+for(var i = 0; i < 5; i++) {
+    console.log(rollSixDie());
+}
