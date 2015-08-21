@@ -18,7 +18,7 @@ var findLargestVariable = function (val1, val2) {
 
 findLargestVariable(test1, test2);
 
-//Task 3 - Declare three variables and output the product and whether product is negative or not.
+//Task 2 - Declare three variables and output the product and whether product is negative or not.
 
 var firstNumber = 3;
 var secondNumber = 8;
