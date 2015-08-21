@@ -1,10 +1,12 @@
 // Task 1 - Fuel calculator: for a given MPG and distance, calculate the number of gallons of fuel needed for a trip.
-var mpg = 55;
-var distance = 100;
+var mpgVal = 55;
+var distanceVal = 110;
 
 var calculateNumberOfGallons = function (mpg, distance) {
- //TODO
+    return distance/ mpg;
 };
+
+console.log(calculateNumberOfGallons(mpgVal, distanceVal));
 
 // Task 2 - Love Calculator
 var name1 = "foo";
