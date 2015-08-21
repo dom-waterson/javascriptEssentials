@@ -17,3 +17,32 @@ var findLargestVariable = function (val1, val2) {
 };
 
 findLargestVariable(test1, test2);
+
+//Task 3 - Declare three variables and output the product and whether product is negative or not.
+
+var firstNumber = 3;
+var secondNumber = 8;
+var thirdNumber = 9;
+
+var getTheProduct = function (firstNum, secondNum, thirdNum) {
+    var product = firstNum * secondNum * thirdNum;
+    console.log("The product of " + firstNum + ", " + secondNum + ", " + thirdNum + " is: " + product);
+    if(isNegative(product)) {
+        console.log("Which is postive");
+    }
+    else {
+        console.log("Which is negitive");
+    }
+};
+
+var isNegative = function (product) {
+    var result = product % 2;
+    if (result === 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
+};
+
+getTheProduct(firstNumber,secondNumber,thirdNumber);
