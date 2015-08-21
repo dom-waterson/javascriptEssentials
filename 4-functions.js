@@ -3,7 +3,7 @@ var mpg = 55;
 var distance = 100;
 
 var calculateNumberOfGallons = function (mpg, distance) {
-
+ //TODO
 };
 
 // Task 2 - Love Calculator
@@ -25,3 +25,11 @@ var loveCalculator = function (name1, name2) {
 };
 
 loveCalculator(name1,name2);
+
+//Task 3 - Calculate the area of a circle for a given radius and diameter.
+
+var calculateAreaOfCircleWithRadius = function (radius) {
+    return 2 * radius * Math.PI ;
+};
+
+console.log(calculateAreaOfCircleWithRadius(6));
