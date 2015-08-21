@@ -19,3 +19,15 @@ var getElementInArray = function (array, optionalNumber) {
 };
 
 getElementInArray(fooArray,0);
+
+
+//Takes two arrays and joins the first onto the end of the last.
+var firstArray = ["Hello", "World"];
+var secondArray = ["Dom", 50];
+
+var joinArrays = function (array1, array2) {
+    var foo = array1.concat(array2);
+    return foo;
+};
+
+console.log(joinArrays(firstArray, secondArray));
