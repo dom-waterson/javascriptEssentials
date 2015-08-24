@@ -9,8 +9,27 @@ var printTriangle = function (rows) {
     }
 }
 
-//printTriangle(3);
+printTriangle(3);
 
+
+// Take a number of rows and output a equalateral triangle
+var equalateralTriangle = function(size){
+    var stars = '';
+    var spaces = '';
+    for(var i = 0 ; i < size; i++){
+        spaces = '';
+        for(var j = size -1-i; j > 0; j--) {
+            spaces += ' ';
+        }
+        stars += '*';
+        if(stars.length > 1) {
+            stars += '*'
+        }
+        console.log(spaces+stars);
+    }
+};
+
+equalateralTriangle(10);
 
 
 //Output the Fibonacci sequence up, up to a certain value.
@@ -54,7 +73,7 @@ for (var i = 1; i <= 100; i++) {
     }
 }
 
-//console.log(storageArray);
+console.log(storageArray);
 
 //Bubble sort an array (loop through the list if the second value is higher than the first, swap).
 // Keep doing this until the list is sorted.
@@ -70,7 +89,7 @@ var bubbleSort = function (a) {
     var swapped;
     swapped = false;
         for (var i=0; i < a.length-1; i++) {
-            if (a[i] > a[i+1]) {
+            if (a[i] < a[i+1]) {
                 var temp = a[i];
                 a[i] = a[i+1];
                 a[i+1] = temp;
