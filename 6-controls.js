@@ -54,4 +54,33 @@ for (var i = 1; i <= 100; i++) {
     }
 }
 
-console.log(storageArray);
+//console.log(storageArray);
+
+//Bubble sort an array (loop through the list if the second value is higher than the first, swap).
+// Keep doing this until the list is sorted.
+var a = [34, 203, 3, 746, 200, 984, 198, 764, 9];
+var b = "Hello";
+
+var bubbleSort = function (a) {
+    if (!(a instanceof Array)) {
+        console.log("Array object wasn't passed to bubble sort function");
+        return;
+    }
+
+    var swapped;
+    swapped = false;
+        for (var i=0; i < a.length-1; i++) {
+            if (a[i] > a[i+1]) {
+                var temp = a[i];
+                a[i] = a[i+1];
+                a[i+1] = temp;
+                swapped = true;
+            }
+        }
+    if (swapped) {
+        bubbleSort(a);
+    }
+};
+
+bubbleSort(a);
+console.log(a);
