@@ -20,14 +20,37 @@ var getElementInArray = function (array, optionalNumber) {
 
 getElementInArray(fooArray,0);
 
+//Converts an array into CSV format
+var arrayToConvert = ["Hello", "World", 50, 60];
+var csvData ="";
+
+for (var i = 0; i < arrayToConvert.length; i++) {
+    csvData += arrayToConvert[i] + ", ";
+}
+
+console.log(csvData);
 
 //Takes two arrays and joins the first onto the end of the last.
 var firstArray = ["Hello", "World"];
 var secondArray = ["Dom", 50];
 
 var joinArrays = function (array1, array2) {
-    var foo = array1.concat(array2);
+    var foo = array2.concat(array1);
     return foo;
 };
 
 console.log(joinArrays(firstArray, secondArray));
+
+// Create and array of random numbers, and output only the ones divisible by 3
+var randomNumbersArray = [];
+
+for(var i = 0; i < 10; i++) {
+    randomNumbersArray.push(Math.floor(Math.random() * (20 - 1 + 1)) + 1);
+}
+
+for(var i = 0; i < randomNumbersArray.length; i++) {
+    if (randomNumbersArray[i] % 3 === 0) {
+        console.log(randomNumbersArray[i]);
+    }
+}
+
