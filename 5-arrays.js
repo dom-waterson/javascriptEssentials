@@ -22,13 +22,12 @@ getElementInArray(fooArray,0);
 
 //Converts an array into CSV format
 var arrayToConvert = ["Hello", "World", 50, 60];
-var csvData ="";
+console.log(arrayToConvert.join(", "));
 
-for (var i = 0; i < arrayToConvert.length; i++) {
-    csvData += arrayToConvert[i] + ", ";
-}
-
-console.log(csvData);
+//Converts CSV format into array
+var csvString = "Hello,world,test,test2,test3";
+var csvStringArray = csvString.split(",");
+console.log(csvStringArray);
 
 //Takes two arrays and joins the first onto the end of the last.
 var firstArray = ["Hello", "World"];
