@@ -37,3 +37,21 @@ var foundNumber = function (fibonacciNumber, endNumber) {
 
 printFibonacciSequence(21);
 
+//Looping through numbers
+var storageArray = [];
+
+for (var i = 1; i <= 100; i++) {
+    if (i % 3 === 0) {
+        if (i % 5 === 0) {
+            storageArray.push("JavaScript");
+        } else {
+            storageArray.push("Java");
+        }
+    } else if (i % 5 === 0) {
+        storageArray.push("Script");
+    } else {
+        storageArray.push(i);
+    }
+}
+
+console.log(storageArray);
