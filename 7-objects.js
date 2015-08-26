@@ -51,10 +51,10 @@ function List () {
 };
 
 //Populating the linked list.
-var list = new List();
-list.add(1);
-list.add(2);
-console.log(list);
+//var list = new List();
+//list.add(1);
+//list.add(2);
+//console.log(list);
 
 function LinkedList () {
     this._length = 0;
@@ -131,3 +131,38 @@ LinkedList.prototype = {
 //
 //list.remove(0);
 //console.log(list);
+
+
+function DoublyLinkedList () {
+    this._length = 0;
+    this._head = null;
+    this._tail = null;
+};
+
+DoublyLinkedList.prototype = {
+    add : function (data) {
+        var node = {
+            data: data,
+            next: null,
+            prev: null
+        };
+        if (this._length == 0) {
+            this._head = node;
+            this._tail = node;
+        }
+        else {
+            this._tail.next = node;
+            node.prev = this._tail;
+            this._tail = node;
+        }
+
+        this._length++;
+    }
+};
+
+var doubleList= new DoublyLinkedList();
+doubleList.add("hello");
+doubleList.add("World");
+doubleList.add("Dom");
+doubleList.add("Waterson");
+console.log(doubleList);
