@@ -4,6 +4,70 @@ var Recipe = {
     ingredients: "Meat, gravy, yorkshire puddings"
 };
 
+function NodeForList (data) {
+    this.data = data;
+    next: null
+};
+
+function SingleLinkedList () {
+    var me = this;
+    me.start = null;
+    me.end = null;
+    me.length = 0;
+
+    me.add = function (node) {
+        if (me.start === null){
+            me.start = node;
+            me.end = me.start;
+            me.length++;
+        }
+        else {
+            me.end.next = node;
+            me.end = me.end.next;
+            me.length++;
+        }
+    };
+
+    me.remove = function (index) {
+        if(index > -1 && index < me.length){
+            var current = me.start,
+                previous,
+                i = 0;
+            if(index === 0) {
+                me.start = current.next;
+            }
+            else {
+                while(i++ < index){
+                    previous = current;
+                    current = current.next;
+                }
+                //skip over the item to remove
+                previous.next = current.next;
+            }
+            //decrement the length
+            me.length--;
+
+            //return the value
+            return current.data;
+        }
+        else{
+            return;
+        }
+    };
+};
+
+var singleList = new SingleLinkedList();
+singleList.add(new NodeForList("hello"));
+singleList.add(new NodeForList("world"));
+singleList.add(new NodeForList("dom"));
+singleList.add(new NodeForList("waterson"));
+console.log(singleList);
+singleList.remove(0);
+console.log(singleList);
+singleList.remove(2);
+console.log(singleList);
+
+
 
 function List () {
     var me = this;
@@ -13,19 +77,19 @@ function List () {
             next: null
         };
 
-        this.start = null;
-        this.end = null;
+        me.start = null;
+        me.end = null;
 
-         this.add = function (data) {
-            if (this.start === null) {
-                this.start = List.makeNode();
-                this.end = this.start;
+         me.add = function (data) {
+            if (me.start === null) {
+                me.start = List.makeNode();
+                me.end = me.start;
             }
             else {
-                this.end.next = List.makeNode();
-                this.end = this.end.next;
+                me.end.next = List.makeNode();
+                me.end = me.end.next;
             }
-            this.end.data = data;
+            me.end.data = data;
         };
 
         me.delete = function (data) {
@@ -157,12 +221,68 @@ DoublyLinkedList.prototype = {
         }
 
         this._length++;
+    },
+
+    remove: function(index){
+
+        //check for out-of-bounds values
+        if (index > -1 && index < this._length){
+
+            var current = this._head,
+                i = 0;
+
+            //special case: removing first item
+            if (index === 0){
+                this._head = current.next;
+
+                /*
+                 * If there's only one item in the list and you remove it,
+                 * then this._head will be null. In that case, you should
+                 * also set this._tail to be null to effectively destroy
+                 * the list. Otherwise, set the previous pointer on the
+                 * new this._head to be null.
+                 */
+                if (!this._head){
+                    this._tail = null;
+                } else {
+                    this._head.prev = null;
+                }
+
+                //special case: removing last item
+            } else if (index === this._length -1){
+                current = this._tail;
+                this._tail = current.prev;
+                this._tail.next = null;
+            } else {
+
+                //find the right location
+                while(i++ < index){
+                    current = current.next;
+                }
+
+                //skip over the item to remove
+                current.prev.next = current.next;
+            }
+
+            //decrement the length
+            this._length--;
+
+            //return the value
+            return current.data;
+
+        } else {
+            return null;
+        }
+
     }
 };
 
-var doubleList= new DoublyLinkedList();
-doubleList.add("hello");
-doubleList.add("World");
-doubleList.add("Dom");
-doubleList.add("Waterson");
-console.log(doubleList);
+//var doubleList= new DoublyLinkedList();
+//doubleList.add("hello");
+//doubleList.add("World");
+//doubleList.add("Dom");
+//doubleList.add("Waterson");
+//console.log(doubleList);
+//
+//doubleList.remove(2);
+//console.log(doubleList);
