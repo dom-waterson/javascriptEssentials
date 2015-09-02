@@ -28,7 +28,7 @@ loveCalculator(name1,name2);
 //Task 3 - Calculate the area of a circle for a given radius and diameter.
 
 var calculateAreaOfCircleWithRadius = function (radius) {
-    return 2 * radius * Math.PI ;
+    return Math.PI * Math.pow(radius, 2);
 };
 
 console.log(calculateAreaOfCircleWithRadius(6));
