@@ -27,7 +27,7 @@ var thirdNumber = 9;
 var getTheProduct = function (firstNum, secondNum, thirdNum) {
     var product = firstNum * secondNum * thirdNum;
     console.log("The product of " + firstNum + ", " + secondNum + ", " + thirdNum + " is: " + product);
-    if(isNegative(product)) {
+    if(isPostive(product)) {
         console.log("Which is postive");
     }
     else {
@@ -35,14 +35,9 @@ var getTheProduct = function (firstNum, secondNum, thirdNum) {
     }
 };
 
-var isNegative = function (product) {
+var isPostive = function (product) {
     var result = product % 2;
-    if (result === 0) {
-        return true;
-    }
-    else {
-        return false;
-    }
+    return result === 0;
 };
 
 getTheProduct(firstNumber,secondNumber,thirdNumber);
