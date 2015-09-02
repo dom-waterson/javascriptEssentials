@@ -36,13 +36,8 @@ var getTheProduct = function (firstNum, secondNum, thirdNum) {
 };
 
 var isPostive = function (product) {
-    if (product >= 0) {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+    return product >= 0;
+
 };
 
 console.log(isPostive(2));
@@ -53,27 +48,25 @@ getTheProduct(firstNumber,secondNumber,thirdNumber);
 // less than 50= E etc up to A. No A*,
 // they’re just a whack idea to cover up the fact exams are too easy
 
-var score = 79;
+var score = 80;
 
 var checkScore = function (score) {
     if (score < 40) {
         return"F";
     }
-    else if (score < 50) {
+    if (score < 50) {
         return"E";
     }
-    else if (score < 60) {
+    if (score < 60) {
         return "D";
     }
-    else if (score < 70) {
+    if (score < 70) {
         return "C";
     }
-    else if (score < 80) {
+    if (score < 80) {
         return "B";
     }
-    else {
         return "A";
-    }
 };
 
 var printScore = function (grade) {
