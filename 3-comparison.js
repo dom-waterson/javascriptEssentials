@@ -36,9 +36,16 @@ var getTheProduct = function (firstNum, secondNum, thirdNum) {
 };
 
 var isPostive = function (product) {
-    var result = product % 2;
-    return result === 0;
+    if (product >= 0) {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 };
+
+console.log(isPostive(2));
 
 getTheProduct(firstNumber,secondNumber,thirdNumber);
 
