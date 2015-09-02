@@ -16,10 +16,10 @@ var loveCalculator = function (name1, name2) {
     var number = length1 + lenght2 - Math.floor(Math.random() * 6);
     var result = number * 42;
     if (result > 100) {
-        console.log("100");
+        return 100;
     }
     else {
-        console.log(result);
+        return result;
     }
 };
 
