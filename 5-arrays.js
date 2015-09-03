@@ -43,13 +43,20 @@ console.log(joinArrays(firstArray, secondArray));
 // Create and array of random numbers, and output only the ones divisible by 3
 var randomNumbersArray = [];
 
+
 for(var i = 0; i < 10; i++) {
     randomNumbersArray.push(Math.floor(Math.random() * (20 - 1 + 1)) + 1);
 }
 
-for(var i = 0; i < randomNumbersArray.length; i++) {
-    if (randomNumbersArray[i] % 3 === 0) {
-        console.log(randomNumbersArray[i]);
-    }
-}
+var checkArrayForNumbersDivisibleByThree = function (arrayToCheck) {
+    var numbersDivisibleByThree = [];
+    for (var i = 0; i < arrayToCheck.length; i++) {
+        if (arrayToCheck[i] % 3 === 0) {
+            numbersDivisibleByThree.push(arrayToCheck[i]);
+        }
 
+    }
+    return numbersDivisibleByThree;
+};
+console.log(randomNumbersArray);
+console.log(checkArrayForNumbersDivisibleByThree(randomNumbersArray));
