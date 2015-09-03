@@ -48,23 +48,25 @@ var fibonacciSequence = function(endNumber) {
 console.log(fibonacciSequence(10));
 
 //Looping through numbers
-var storageArray = [];
-
-for (var i = 1; i <= 100; i++) {
-    if (i % 3 === 0) {
-        if (i % 5 === 0) {
-            storageArray.push("JavaScript");
+var loopThroughNumbers = function(maxNumber) {
+    var storageArray = [];
+    for (var i = 1; i <= maxNumber; i++) {
+        if (i % 3 === 0) {
+            if (i % 5 === 0) {
+                storageArray.push("JavaScript");
+            } else {
+                storageArray.push("Java");
+            }
+        } else if (i % 5 === 0) {
+            storageArray.push("Script");
         } else {
-            storageArray.push("Java");
+            storageArray.push(i);
         }
-    } else if (i % 5 === 0) {
-        storageArray.push("Script");
-    } else {
-        storageArray.push(i);
     }
-}
+    return storageArray;
+};
 
-console.log(storageArray);
+console.log(loopThroughNumbers(50));
 
 //Bubble sort an array (loop through the list if the second value is higher than the first, swap).
 // Keep doing this until the list is sorted.
