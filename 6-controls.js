@@ -33,28 +33,19 @@ equalateralTriangle(10);
 
 
 //Output the Fibonacci sequence up, up to a certain value.
-var printFibonacciSequence = function(endNumber) {
-    var a = 0, b = 1, f = 1;
+var fibonacciSequence = function(endNumber) {
+    var a = 0, b = 1, f = 1, count;
     var fibArray = [a, b];
-    do {
+    for (count = 3; count <= endNumber; count++) {
         f = a + b;
         fibArray.push(f);
         a = b;
         b = f;
-    } while (foundNumber(f, endNumber));
-    console.log(fibArray);
-};
-
-
-var foundNumber = function (fibonacciNumber, endNumber) {
-    if (fibonacciNumber === endNumber) {
-        return false;
-    } else {
-        return true;
     }
+    return fibArray;
 };
 
-printFibonacciSequence(21);
+console.log(fibonacciSequence(10));
 
 //Looping through numbers
 var storageArray = [];
